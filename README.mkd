@@ -1,65 +1,65 @@
-GitHub�n���Y�I������
+GitHubハンズオン資料
 ====================
 
-���̎����́AGitHub�̃n���Y�I�����s�����߂̎����ł��BGitHub�𗘗p������
-�j�ƂȂ郊�x�[�X�ƃv�����N�G�X�g�����C���ɊJ�����Ă��܂��B�ƏK��Г��ł�GitHub�̕׋���ȂǂŁA���R�ɂ����p���������B
-�Ȃ��AGitHub�̃x�[�X�ƂȂ�Git�ɂ͗l�X�ȃG�b�Z���X������A���̎����͖ԗ�������̂ł͂���܂���B����Git���ЂȂǂ𕹗p���Ă����p���������B
-�܂��A�n���Y�I���������󂯕t���܂��̂ŁA����v�����N�G�X�g�𑗂��Ă��������B
+この資料は、GitHubのハンズオンを行うための資料です。GitHubを利用する上で
+核となるリベースとプルリクエストをメインに開発しています。独習や社内でのGitHubの勉強会などで、自由にご利用ください。
+なお、GitHubのベースとなるGitには様々なエッセンスがあり、この資料は網羅するものではありません。他のGit書籍などを併用してご利用ください。
+また、ハンズオン資料も受け付けますので、是非プルリクエストを送ってください。
 
-���K1. �o�O��
+演習1. バグ報告
 --------------
 
-��Ƃ��s���O�ɁA�o�O��@�\�ǉ��̗v�]��񍐂��Ă����܂��傤�BOpenStack�ł́ALaunchPad�ɂ���g���b�J�[����񍐂ł��܂��B
-���̑��̈�ʓI�ȃv���W�F�N�g�ł�GitHub���Issues�g���b�J�[�ŊǗ�����Ă��邱�Ƃ������ł��B
+作業を行う前に、バグや機能追加の要望を報告しておきましょう。OpenStackでは、LaunchPadにあるトラッカーから報告できます。
+その他の一般的なプロジェクトではGitHub上のIssuesトラッカーで管理されていることが多いです。
 
-���L�̉��K�p�v���W�F�N�g����o�O�񍐂��s���Ă݂܂��傤�B
+下記の演習用プロジェクトからバグ報告を行ってみましょう。
 
-�����K��A�폜�����̂ŋC�ɂ����ɂǂ�ǂ����Ă݂Ă��������B
+※演習後、削除されるので気にせずにどんどん入れてみてください。
 
 
-* LaunchPad�p�̃g���b�L���O(OpenStack�̏ꍇ)
+* LaunchPad用のトラッキング(OpenStackの場合)
  * https://bugs.launchpad.net/openstack-dummy
 
-* GitHub�p�̕�
- * ���̃v���W�F�N�g�̏��**Issue**����B
+* GitHub用の報告
+ * このプロジェクトの上の**Issue**から。
 
 ----
-#### ���|�C���g
+#### ☆ポイント
 
-�o�O�񍐂��s���΁A�C�����@��T���Ă��邤���ɒN�����Ή����Ă���邩���m��܂���B**�m���Ă���l�����Έ�u�Ŏ���o�O��@�\�ǉ������Ȃ��͂Ȃ�**�̂ŁA�܂��̓o�O�񍐂��s���Ă������Ƃ������߂��܂��B
+バグ報告を行えば、修正方法を探しているうちに誰かが対応してくれるかも知れません。**知っている人がやれば一瞬で治るバグや機能追加も少なくはない**ので、まずはバグ報告を行っておくことをお勧めします。
 
-�܂��A�o�O�񍐂ɂ���ĕ����o������o�OID(�g���b�J�[ID)����Ɨp��ID�������o����܂��B����ID�𗘗p����**�u�R�~�b�g��u�����`�����ɑ΂����ƂȂ̂��v��R�Â���**���Ƃ��ł��܂��B
+また、バグ報告によって払い出させるバグID(トラッカーID)を作業用のIDが払い出されます。そのIDを利用して**「コミットやブランチが何に対する作業なのか」を紐づける**ことができます。
 
-�p��͂���܂茵���łȂ��K���ł����v�B���̑��A**�ǂ��������O���o��**�̂��Ƃ��A**�ǂ�������ʂɂȂ���**�̂��Ƃ��A**�R�[�h�̂���������������**���Ƃ��A��肪�����鎑�������悤�B
+英語はあんまり厳密でなく適当でも大丈夫。その代り、**どういうログが出た**のかとか、**どういう画面になった**のかとか、**コードのここがおかしそう**だとか、問題が分かる資料をつけよう。
 
 ----
 
-���K2. ��Ɨp���|�W�g���̍쐬(�t�H�[�N)
+演習2. 作業用リポジトリの作成(フォーク)
 ------------------------------------
-�v�����N�G�X�g���s���O�i�Ƃ��āAGitHub�ł͍�Ɨp�̎����̃��|�W�g�����쐬����K�v������܂��B(**����clone���ăp�b�`�𓊂����Ȃ��悤�ɒ���**!!)
+プルリクエストを行う前段として、GitHubでは作業用の自分のリポジトリを作成する必要があります。(**直接cloneしてパッチを投げつけないように注意**!!)
 
-���L�̍�Ƃ�**Web�u���E�U**�ōs���܂��B
+下記の作業を**Webブラウザ**で行います。
 
-1. GitHub�Ƀ��O�C��
-2. ���K�pNova�̃��|�W�g���ɃA�N�Z�X
+1. GitHubにログイン
+2. 演習用Novaのリポジトリにアクセス
  * https://github.com/okamototk/nova/
-3. �t�H�[�N�{�^���������A�t�H�[�N
+3. フォークボタンを押し、フォーク
 
-����ŁA���Ȃ��̍�Ɨp���|�W�g�����ł��܂����B[[GitHub�̂��Ȃ��̃y�[�W|https://github.com/]]�Ŋm���Ƀt�H�[�N����Ă��邱�Ƃ��m�F���Ă��������B
+これで、あなたの作業用リポジトリができました。[[GitHubのあなたのページ|https://github.com/]]で確かにフォークされていることを確認してください。
 
-���K3. ��Ɨp�u�����`���쐬(clone/branch)
+演習3. 作業用ブランチを作成(clone/branch)
 ---------------------------
-���L�̍�Ƃ���Ɨp�[���ōs���܂��B
+下記の作業を作業用端末で行います。
 
-### �N���[��:���|�W�g���̎擾(checkout����)
+### クローン:リポジトリの取得(checkout相当)
 
-1. �K���ȍ�Ɨp�f�B���N�g���Ɉړ�
-2. clone�R�}���h�����s
+1. 適当な作業用ディレクトリに移動
+2. cloneコマンドを実行
 ```
 $ git clone https://<username>@github.com/<username>/nova/
 ```
 
-�Ⴆ�΁Amita�Ƃ������[�UID�̏ꍇ�A
+例えば、mitaというユーザIDの場合、
 
 ```
 $ git clone https://mita@github.com/mita/nova/
@@ -68,7 +68,7 @@ $ ls
 nova
 ```
 
-�Ƃ���ƁA���|�W�g���̕������擾�ł��܂��B�I�t�B�X�Ȃǂ�HTTP�v���L�V���ז����Ă��܂������Ȃ��ꍇ�́A���L�̂悤�Ƀv���L�V�̐ݒ�����Ă����Ɨǂ��ł��B
+とすると、リポジトリの複製を取得できます。オフィスなどでHTTPプロキシが邪魔してうまくいかない場合は、下記のようにプロキシの設定をしておくと良いです。
 
 ```
 $ export https_proxy=http://username:password@proxyhost.xx.xx:8080/
@@ -76,7 +76,7 @@ $ export https_proxy=http://username:password@proxyhost.xx.xx:8080/
 
 
 
-���|�W�g���̎擾���ł�����A���[�U�̐ݒ�����Ă����܂��B
+リポジトリの取得ができたら、ユーザの設定をしておきます。
 
 ```
 $ cd nova
@@ -84,11 +84,11 @@ $ git config user.name "Mita Akari"
 $ git config user.email mita@fujixxx.com
 ```
 
-����ŁA���|�W�g���̃Z�b�g�A�b�v�͊����ł��B
+これで、リポジトリのセットアップは完了です。
 
-### ��Ɨp�u�����`�̍쐬
+### 作業用ブランチの作成
 
-���|�W�g���̕������擾�ł�����A��Ɨp�u�����`���쐬���܂��B�Ⴆ�΁A12345�Ԃ̃o�O���C������ꍇ�A
+リポジトリの複製が取得できたら、作業用ブランチを作成します。例えば、12345番のバグを修正する場合、
 
 ```
 $ cd nova
@@ -98,9 +98,9 @@ $ git branch                  // confirm branch
 ...
 bug/12345
 ```
-�Ƃ��܂��Bbug/xxxx��OpenStack�̖����K���ł��B���̃v���W�F�N�g�ł�fix-xxxx�Ƃ������O�����m��܂���̂ŁA�u�����`�����m�F���Ă���쐬����Ɨǂ��ł��傤�B�Ȃ��AOpenStack�ł͎d�l�̒�Ă�Blue Print�Ƃ��ċL�q���܂����ABlue Print�ɑ΂��������\���ꍇ�́Abp/xxxx�Ƃ������O�ɂȂ�܂��B
+とします。bug/xxxxはOpenStackの命名規則です。他のプロジェクトではfix-xxxxという名前かも知れませんので、ブランチ名を確認してから作成すると良いでしょう。なお、OpenStackでは仕様の提案をBlue Printとして記述しますが、Blue Printに対する実装を表す場合は、bp/xxxxという名前になります。
 
-��Ɨp�u�����`�ւ̈ړ��́A
+作業用ブランチへの移動は、
 
 ```
 $ git checkout bug/12345     // change branch
@@ -110,70 +110,70 @@ master
 ...
 ```
 
-�Ƃ��܂��B
+とします。
 
-����ŁA��Ƃ̏����͊����ł��B
+これで、作業の準備は完了です。
 
-���K4. �ҏW�A���[�J���u�����`�ւ̕ۑ�
+演習4. 編集、ローカルブランチへの保存
 ------------------------------
 
-�t�@�C����ҏW(�o�O�C���E�@�\�ǉ��A�R�����g�Ƀ��u���^�[�𖄂ߍ��ށAetc....)���܂��B
+ファイルを編集(バグ修正・機能追加、コメントにラブレターを埋め込む、etc....)します。
 
-�ҏW���ꂽ�t�@�C���́A���̃R�}���h�Ŋm�F�ł��܂��B
+編集されたファイルは、次のコマンドで確認できます。
 
 ```
 $ git status
 ```
 
-�ҏW������������A���[�J���u�����`�֕ۑ����܂��B�Ⴆ�΁AREADME.rst�t�@�C����ҏW�����ꍇ���l���܂��B
+編集が完了したら、ローカルブランチへ保存します。例えば、README.rstファイルを編集した場合を考えます。
 
 ```
 $ git add README.rst
 $ git commit    
 ```
 
-�R�~�b�g���b�Z�[�W�͊�{�p��ŏ����܂��傤�B(���{��ł��g���邯�Ǐȗ�)
+コミットメッセージは基本英語で書きましょう。(日本語でも使えるけど省略)
 
-�� �����t�@�C�����܂Ƃ߂ăR�~�b�g����ꍇ�́A�����\�ł��B�ҏW���ꂽ�t�@�C�������ׂāAadd & commit����܂��B
+※ 複数ファイルをまとめてコミットする場合は、次も可能です。編集されたファイルがすべて、add & commitされます。
 
 ```
 $ git commit -a
 ```
 
-git�̃R�~�b�g���b�Z�[�W�̕ҏW�̓f�t�H���g�ł�vim�𗘗p���܂����Acore.editor��ݒ肵�Ă����ƁA�R�~�b�g���b�Z�[�W��ǉ�����Ƃ��ɂ��D�݂̃G�f�B�^�������p���������܂��B
+gitのコミットメッセージの編集はデフォルトではvimを利用しますが、core.editorを設定しておくと、コミットメッセージを追加するときにお好みのエディタをご利用いただけます。
 
 ```
 > git config --global core.editor C:/Windows/notepad.exe
 ```
 
-���K5. ������GitHub�̃��|�W�g���֔��f(�v�b�V��)
+演習5. 自分のGitHubのリポジトリへ反映(プッシュ)
 ------------------------------
 
-���̃R�}���h�ŁA���[�J���̃u�����`�̕ύX�����Ȃ���GitHub�̃��|�W�g���֔��f�����܂��B
+次のコマンドで、ローカルのブランチの変更をあなたのGitHubのリポジトリへ反映させます。
 
 ```
 $ git push origin bug/12345
 ```
 
-�v�b�V��������A[[GitHub�̃��|�W�g��|https://github.com]]�֊m���ɔ��f���ꂢ�邩�m�F���܂��傤�B�f�t�H���g�̕\����master�ɂȂ��Ă��܂��̂ŁAbug/12345�u�����`���m�F����̂�Y��Ȃ��悤�ɂ��Ă��������B�Ȃ��A��x�v�b�V�����Ă��܂��΁A
+プッシュしたら、[[GitHubのリポジトリ|https://github.com]]へ確かに反映されいるか確認しましょう。デフォルトの表示はmasterになっていますので、bug/12345ブランチを確認するのを忘れないようにしてください。なお、一度プッシュしてしまえば、
 
 ```
 $ git push 
 ```
 
-�ƃv�b�V������ȗ��ł��܂��B
+とプッシュ先を省略できます。
 
-�� ��ʓI�ȊJ����Git�����L���|�W�g���Ƃ��ė��p����ꍇ�́A������fetch/pull�ɂ�铯���ǃ}�[�W���K�v�ɂȂ�܂����A�������ȗ����܂��B
+※ 一般的な開発でGitを共有リポジトリとして利用する場合は、ここでfetch/pullによる同期どマージが必要になりますが、説明を省略します。
 
-���K6. �{�Ƃ̍ŐV���|�W�g���̓��e�𔽉f(���x�[�X)
+演習6. 本家の最新リポジトリの内容を反映(リベース)
 --------------------------------------------
 
-�t�H�[�N�������|�W�g���ō�Ƃ����Ă���ԂɁA�{�Ƃ̃R�[�h���F�X�ƕύX�ɂȂ��Ă���\��������܂��B�{�Ƃ̍ŐV�ł̃R�[�h���u�����`�֎�荞�ޏꍇ�́A���x�[�X���s���܂��B(�}�[�W�ł������̂ł��������ł͊������܂�)
+フォークしたリポジトリで作業をしている間に、本家のコードが色々と変更になっている可能性があります。本家の最新版のコードをブランチへ取り込む場合は、リベースを行います。(マージでもいいのですがここでは割愛します)
 
-�� ���x�[�X�����{�����Ƃ̃C���[�W�͎��̂悤�ɂȂ�܂��B
-![git remase master���s������](http://cdn-ak.f.st-hatena.com/images/fotolife/e/enakai00/20120130/20120130201537.jpg)
+※ リベースが実施する作業のイメージは次のようになります。
+![git remase masterが行うこと](http://cdn-ak.f.st-hatena.com/images/fotolife/e/enakai00/20120130/20120130201537.jpg)
 
-�܂��A�{�Ƃ̃��|�W�g���Ɠ���������master�u�����`�Ɉړ����܂��B
+まず、本家のリポジトリと同期させるmasterブランチに移動します。
 
 ```
 $ git checkout master
@@ -182,17 +182,17 @@ $ git branch
 ....
 ```
 
-���ɂ���master�u�����`��nova�u�����`��master�u�����`�̍X�V����荞�݂܂��B
+次にこのmasterブランチにnovaブランチのmasterブランチの更新を取り込みます。
 
 ```
 $ git pull https://github.com/okamototk/nova.git  master
 ```
 
-�{�Ƃ̃��|�W�g��URL���w�肪�K�v�Ȃ̂ŁA���ӂ��Ă��������B
+本家のリポジトリURLを指定が必要なので、注意してください。
 
-����ŁA���[�J�����|�W�g����master���{�Ƃ̍ŐV�łƓ�������܂����B
+これで、ローカルリポジトリのmasterが本家の最新版と同期されました。
 
-��Ɨp�̃u�����`�ɖ߂�܂��B
+作業用のブランチに戻ります。
 
 ```
 $ git checkout bug/12345
@@ -202,7 +202,7 @@ master
 ...
 ```
 
-���悢�惊�x�[�X�����s���܂��B�{�ƂƓ���������master�̃u�����`����_�ɂ��āA���x�[�X�����s���܂��B
+いよいよリベースを実行します。本家と同期させたmasterのブランチを基点にして、リベースを実行します。
 
 ```
 $ git rebase master 
@@ -220,12 +220,12 @@ If you would prefer to skip this patch, instead run "git rebase --skip".
 To restore the original branch and stop rebasing run "git rebase --abort".
 ```
 
-�R���t���N�g���������܂����B�R���t���N�g���Ȃ���Δ�΂��܂��B
+コンフリクトが発生しました。コンフリクトがなければ飛ばします。
 
 
-#### ����(�R���t���N�g)
+#### 競合(コンフリクト)
 
-�R���t���N�g�����ꏊ���A���L�̂悤�ɂȂ��Ă��܂��B
+コンフリクトした場所が、下記のようになっています。
 
 ```
 <<<<<<< HEAD
@@ -235,52 +235,52 @@ To restore the original branch and stop rebasing run "git rebase --abort".
 >>>>>>> Working.
 ```
 
-�ҏW���ďC�����Ă��������B�I��������Agit add�Ŋ����������Ƃ�git�ɒʒm���܂��B
+編集して修正してください。終了したら、git addで完了したことをgitに通知します。
 
 ```
 $ git add README.txt
 ```
 
-�}�[�W�𑱂��܂��B
+マージを続けます。
 
 ```
 $ git rebase --continue
 Applying: Working.
 ```
 
-�R���t���N�g���������܂����B�R���t���N�g����������΁A���̑���𑱂��܂��B
+コンフリクトが解決しました。コンフリクトが発生すれば、この操作を続けます。
 
 ```
 $ git --skip
 ```
-�ŋ��������������p�b�`�̃}�[�W���X�L�b�v���邱�Ƃ��ł��܂��B
+で競合が発生したパッチのマージをスキップすることができます。
 
-rebase���s���Ă���Œ��ŁA��R�̋����̉������J��Ԃ��Ă��邤���ɁA�ʓ|�ɂȂ��Ă��邩������܂���Brebase���n�߂�O�̏�Ԃɖ߂�ɂ́A
+rebaseを行っている最中で、沢山の競合の解決を繰り返しているうちに、面倒になってくるかもしれません。rebaseを始める前の状態に戻るには、
 
 ```
 $ git rebase --abort
 ```
 
-�Ƃ���ƃ��x�[�X�̎��s�O�ɖ߂�܂��B
+とするとリベースの実行前に戻れます。
 
-���K6: �v�����N�G�X�g�̑��M
+演習6: プルリクエストの送信
 --------------------------
 
-���āA���悢��v�����N�G�X�g�̂𑗐M���܂��B[[GitHub�̂��Ȃ��̃��|�W�g��|https://github.com/]]�̉E��ɂ���uPull Request�v�{�^���������Ă��������B
+さて、いよいよプルリクエストのを送信します。[[GitHubのあなたのリポジトリ|https://github.com/]]の右上にある「Pull Request」ボタンを押してください。
 
-* ���̉�ʂ��v�����N�G�X�g�̑��t��̃��|�W�g��/�u�����`�ł�
-* �E�̉�ʂ����ꂩ��v�����N�G�X�g�𑗐M���悤�Ƃ��邠�Ȃ��̃u�����`�ł��B
+* 左の画面がプルリクエストの送付先のリポジトリ/ブランチです
+* 右の画面がこれからプルリクエストを送信しようとするあなたのブランチです。
 
-�{�Ƃ�master�ւ̑��M�ł���΍��̉�ʂ͂��̂܂܂ɂ��āA�E�̉�ʂō���쐬������Ɨp�u�����`bug/12345���w�肵�Ă��������B
-�uUpdate Commit Range�v�������΃v�����N�G�X�g�͊����ł��B
+本家のmasterへの送信であれば左の画面はそのままにして、右の画面で今回作成した作業用ブランチbug/12345を指定してください。
+「Update Commit Range」を押せばプルリクエストは完了です。
 
-���K7: �v�����N�G�X�g�ւ̃R�����g�ւ̑Ή�
+演習7: プルリクエストへのコメントへの対応
 -----------------------------------------
 
-�v�����N�G�X�g����x�ŏ��������Ƃ͌���܂���B�J���҂���N���[����R�����g�������Ƃ��܂܂���܂��B
-�N���[���������ꍇ�́A
+プルリクエストが一度で承諾されるとは限りません。開発者からクレームやコメントがつくこともままあります。
+クレームがついた場合は、
 
-1. ���[�J���̃u�����`�̃t�@�C����ύX�E�R�~�b�g
-2. �t�H�[�N���������̃��|�W�g���փv�b�V��
+1. ローカルのブランチのファイルを変更・コミット
+2. フォークした自分のリポジトリへプッシュ
 
-���邱�Ƃɂ��A�v�����N�G�X�g���X�V�ł��܂��B�v�����N�G�X�g�ΏۂɃu�����`���w�肵�Ă���΁A�v�b�V�����ꂽ���e�͎����I�ɍX�V����܂��B�v�����N�G�X�g���X�V������A�v�����N�G�X�g�̃g���b�J�[�ɃR�����g��ǋL���܂��傤�B
+することにより、プルリクエストを更新できます。プルリクエスト対象にブランチを指定していれば、プッシュされた内容は自動的に更新されます。プルリクエストを更新したら、プルリクエストのトラッカーにコメントを追記しましょう。
